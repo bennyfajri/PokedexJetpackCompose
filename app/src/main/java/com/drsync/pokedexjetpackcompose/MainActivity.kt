@@ -3,20 +3,14 @@ package com.drsync.pokedexjetpackcompose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.drsync.pokedexjetpackcompose.pokemonlist.PokemonListScreen
 import com.drsync.pokedexjetpackcompose.ui.theme.PokedexJetpackComposeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     startDestination = LIST_SCREEN
                 ) {
                    composable(LIST_SCREEN) {
-
+                       PokemonListScreen(navController = navController)
                    }
                     composable(
                         "$DETAIL_SCREEN/{$DOMINANT_COLOR}/{$POKEMON_NAME}",
